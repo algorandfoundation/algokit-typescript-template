@@ -1,0 +1,466 @@
+{
+  "success": false,
+  "error": null,
+  "result": [
+    {
+      "type": "ExecutionPaths",
+      "count": 1,
+      "description": "\nCheck: \"unprotected-deletable\", Impact: High, Confidence: High\nDescription: Unprotected Deletable Applications\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#unprotected-deletable-application\n",
+      "check": "unprotected-deletable",
+      "impact": "High",
+      "confidence": "High",
+      "help": "- Avoid deletable applications.\n- Add access controls to the vulnerable method.",
+      "paths": [
+        {
+          "short": "0 -> 1 -> 2 -> 4 -> 8 -> 5",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "10: pushbytes 0x02bece11",
+              "11: txna ApplicationArgs 0",
+              "12: match main_hello_route@3"
+            ],
+            [
+              "20: main_hello_route@3:",
+              "23: txn OnCompletion",
+              "24: !",
+              "25: assert",
+              "26: txn ApplicationID",
+              "27: assert",
+              "30: txna ApplicationArgs 1",
+              "31: extract 2 0",
+              "34: callsub hello"
+            ],
+            [
+              "61: hello:",
+              "64: proto 1 1",
+              "67: pushbytes \"Hello \"",
+              "68: frame_dig -1",
+              "69: concat",
+              "70: retsub"
+            ],
+            [
+              "35: dup",
+              "36: len",
+              "37: itob",
+              "38: extract 6 2",
+              "39: swap",
+              "40: concat",
+              "41: pushbytes 0x151f7c75",
+              "42: swap",
+              "43: concat",
+              "44: log",
+              "45: pushint 1",
+              "46: return"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 1,
+      "description": "\nCheck: \"unprotected-updatable\", Impact: High, Confidence: High\nDescription: Unprotected Upgradable Applications\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#unprotected-updatable-application\n",
+      "check": "unprotected-updatable",
+      "impact": "High",
+      "confidence": "High",
+      "help": "- Avoid upgradable applications.\n- Add access controls to the vulnerable method.",
+      "paths": [
+        {
+          "short": "0 -> 1 -> 2 -> 4 -> 8 -> 5",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "10: pushbytes 0x02bece11",
+              "11: txna ApplicationArgs 0",
+              "12: match main_hello_route@3"
+            ],
+            [
+              "20: main_hello_route@3:",
+              "23: txn OnCompletion",
+              "24: !",
+              "25: assert",
+              "26: txn ApplicationID",
+              "27: assert",
+              "30: txna ApplicationArgs 1",
+              "31: extract 2 0",
+              "34: callsub hello"
+            ],
+            [
+              "61: hello:",
+              "64: proto 1 1",
+              "67: pushbytes \"Hello \"",
+              "68: frame_dig -1",
+              "69: concat",
+              "70: retsub"
+            ],
+            [
+              "35: dup",
+              "36: len",
+              "37: itob",
+              "38: extract 6 2",
+              "39: swap",
+              "40: concat",
+              "41: pushbytes 0x151f7c75",
+              "42: swap",
+              "43: concat",
+              "44: log",
+              "45: pushint 1",
+              "46: return"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 0,
+      "description": "\nCheck: \"can-close-account\", Impact: High, Confidence: High\nDescription: Missing CloseRemainderTo field Validation\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#missing-closeremainderto-field-validation\n",
+      "check": "can-close-account",
+      "impact": "High",
+      "confidence": "High",
+      "help": "Validate `CloseRemainderTo` field in the LogicSig.",
+      "paths": []
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 0,
+      "description": "\nCheck: \"can-close-asset\", Impact: High, Confidence: High\nDescription: Missing AssetCloseTo Field Validation\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#missing-assetcloseto-field-validation\n",
+      "check": "can-close-asset",
+      "impact": "High",
+      "confidence": "High",
+      "help": "Validate `AssetCloseTo` field in the LogicSig.",
+      "paths": []
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 1,
+      "description": "\nCheck: \"is-deletable\", Impact: High, Confidence: High\nDescription: Deletable Applications\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#deletable-application\n",
+      "check": "is-deletable",
+      "impact": "High",
+      "confidence": "High",
+      "help": "Do not approve `DeleteApplication` type application calls.",
+      "paths": [
+        {
+          "short": "0 -> 1 -> 2 -> 4 -> 8 -> 5",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "10: pushbytes 0x02bece11",
+              "11: txna ApplicationArgs 0",
+              "12: match main_hello_route@3"
+            ],
+            [
+              "20: main_hello_route@3:",
+              "23: txn OnCompletion",
+              "24: !",
+              "25: assert",
+              "26: txn ApplicationID",
+              "27: assert",
+              "30: txna ApplicationArgs 1",
+              "31: extract 2 0",
+              "34: callsub hello"
+            ],
+            [
+              "61: hello:",
+              "64: proto 1 1",
+              "67: pushbytes \"Hello \"",
+              "68: frame_dig -1",
+              "69: concat",
+              "70: retsub"
+            ],
+            [
+              "35: dup",
+              "36: len",
+              "37: itob",
+              "38: extract 6 2",
+              "39: swap",
+              "40: concat",
+              "41: pushbytes 0x151f7c75",
+              "42: swap",
+              "43: concat",
+              "44: log",
+              "45: pushint 1",
+              "46: return"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 1,
+      "description": "\nCheck: \"is-updatable\", Impact: High, Confidence: High\nDescription: Upgradable Applications\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#upgradable-application\n",
+      "check": "is-updatable",
+      "impact": "High",
+      "confidence": "High",
+      "help": "Do not approve `UpdateApplication` type application calls.",
+      "paths": [
+        {
+          "short": "0 -> 1 -> 2 -> 4 -> 8 -> 5",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "10: pushbytes 0x02bece11",
+              "11: txna ApplicationArgs 0",
+              "12: match main_hello_route@3"
+            ],
+            [
+              "20: main_hello_route@3:",
+              "23: txn OnCompletion",
+              "24: !",
+              "25: assert",
+              "26: txn ApplicationID",
+              "27: assert",
+              "30: txna ApplicationArgs 1",
+              "31: extract 2 0",
+              "34: callsub hello"
+            ],
+            [
+              "61: hello:",
+              "64: proto 1 1",
+              "67: pushbytes \"Hello \"",
+              "68: frame_dig -1",
+              "69: concat",
+              "70: retsub"
+            ],
+            [
+              "35: dup",
+              "36: len",
+              "37: itob",
+              "38: extract 6 2",
+              "39: swap",
+              "40: concat",
+              "41: pushbytes 0x151f7c75",
+              "42: swap",
+              "43: concat",
+              "44: log",
+              "45: pushint 1",
+              "46: return"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 2,
+      "description": "\nCheck: \"missing-fee-check\", Impact: High, Confidence: High\nDescription: Missing Fee Field Validation\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#missing-fee-field-validation\n",
+      "check": "missing-fee-check",
+      "impact": "High",
+      "confidence": "High",
+      "help": "Validate `Fee` field in the LogicSig.",
+      "paths": [
+        {
+          "short": "0 -> 1 -> 2 -> 4 -> 8 -> 5",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "10: pushbytes 0x02bece11",
+              "11: txna ApplicationArgs 0",
+              "12: match main_hello_route@3"
+            ],
+            [
+              "20: main_hello_route@3:",
+              "23: txn OnCompletion",
+              "24: !",
+              "25: assert",
+              "26: txn ApplicationID",
+              "27: assert",
+              "30: txna ApplicationArgs 1",
+              "31: extract 2 0",
+              "34: callsub hello"
+            ],
+            [
+              "61: hello:",
+              "64: proto 1 1",
+              "67: pushbytes \"Hello \"",
+              "68: frame_dig -1",
+              "69: concat",
+              "70: retsub"
+            ],
+            [
+              "35: dup",
+              "36: len",
+              "37: itob",
+              "38: extract 6 2",
+              "39: swap",
+              "40: concat",
+              "41: pushbytes 0x151f7c75",
+              "42: swap",
+              "43: concat",
+              "44: log",
+              "45: pushint 1",
+              "46: return"
+            ]
+          ]
+        },
+        {
+          "short": "0 -> 1 -> 6 -> 7",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "48: main_bare_routing@6:",
+              "51: txn OnCompletion",
+              "52: bnz main_after_if_else@10"
+            ],
+            [
+              "53: txn ApplicationID",
+              "54: !",
+              "55: assert",
+              "56: pushint 1",
+              "57: return"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 0,
+      "description": "\nCheck: \"group-size-check\", Impact: High, Confidence: High\nDescription: Usage of absolute indexes without validating GroupSize\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#missing-groupsize-validation\n",
+      "check": "group-size-check",
+      "impact": "High",
+      "confidence": "High",
+      "help": "- Avoid using absolute indexes. Validate GroupSize if used.\n- Favor using ARC-4 ABI and relative indexes for group transactions.",
+      "paths": []
+    },
+    {
+      "type": "ExecutionPaths",
+      "count": 2,
+      "description": "\nCheck: \"rekey-to\", Impact: High, Confidence: High\nDescription: Rekeyable Logic Signatures\n\nWiki: https://github.com/crytic/tealer/wiki/Detector-Documentation#rekeyable-logicsig\n",
+      "check": "rekey-to",
+      "impact": "High",
+      "confidence": "High",
+      "help": "Validate `RekeyTo` field in the LogicSig.",
+      "paths": [
+        {
+          "short": "0 -> 1 -> 2 -> 4 -> 8 -> 5",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "10: pushbytes 0x02bece11",
+              "11: txna ApplicationArgs 0",
+              "12: match main_hello_route@3"
+            ],
+            [
+              "20: main_hello_route@3:",
+              "23: txn OnCompletion",
+              "24: !",
+              "25: assert",
+              "26: txn ApplicationID",
+              "27: assert",
+              "30: txna ApplicationArgs 1",
+              "31: extract 2 0",
+              "34: callsub hello"
+            ],
+            [
+              "61: hello:",
+              "64: proto 1 1",
+              "67: pushbytes \"Hello \"",
+              "68: frame_dig -1",
+              "69: concat",
+              "70: retsub"
+            ],
+            [
+              "35: dup",
+              "36: len",
+              "37: itob",
+              "38: extract 6 2",
+              "39: swap",
+              "40: concat",
+              "41: pushbytes 0x151f7c75",
+              "42: swap",
+              "43: concat",
+              "44: log",
+              "45: pushint 1",
+              "46: return"
+            ]
+          ]
+        },
+        {
+          "short": "0 -> 1 -> 6 -> 7",
+          "blocks": [
+            [
+              "1: #pragma version 10",
+              "2: UNSUPPORTED #pragma typetrack false"
+            ],
+            [
+              "5: main:",
+              "8: txn NumAppArgs",
+              "9: bz main_bare_routing@6"
+            ],
+            [
+              "48: main_bare_routing@6:",
+              "51: txn OnCompletion",
+              "52: bnz main_after_if_else@10"
+            ],
+            [
+              "53: txn ApplicationID",
+              "54: !",
+              "55: assert",
+              "56: pushint 1",
+              "57: return"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

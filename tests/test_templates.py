@@ -94,7 +94,6 @@ def run_init(
         "--no-workspace",
     ]
     answers = {**DEFAULT_PARAMETERS, **(answers or {})}
-    answers["deployment_language"] = "python"
 
     for question, answer in answers.items():
         init_args.extend(["-a", question, answer])
@@ -163,7 +162,7 @@ def run_init_kwargs(
     working_dir: Path, **kwargs: str | bool
 ) -> subprocess.CompletedProcess:
     answers = {k: str(v) for k, v in kwargs.items()}
-    name_suffix = "_".join(f"{v}_python" for _, v in answers.items())
+    name_suffix = "_".join(f"{v}" for _, v in answers.items())
     return run_init(working_dir, f"{name_suffix}", answers=answers)
 
 

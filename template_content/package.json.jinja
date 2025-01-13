@@ -1,0 +1,56 @@
+{
+  "name": "smart_contracts",
+  "version": "1.0.0",
+  "description": "Smart contract deployer",
+  "main": "smart_contracts/index.ts",
+  "scripts": {
+    "build": "puya-ts build smart_contracts --output-source-map --out-dir artifacts && algokit generate client smart_contracts/artifacts --output {app_spec_dir}/{contract_name}Client.ts",
+    "deploy": "ts-node-dev --transpile-only --watch .env -r dotenv/config smart_contracts/index.ts",
+    "deploy:ci": "ts-node --transpile-only -r dotenv/config smart_contracts/index.ts",
+    {%- if use_eslint  %}
+    "lint": "eslint ./src/ --ext .ts",
+    "lint:fix": "eslint ./src/ --ext .ts --fix",
+    {%- endif %}
+    "check-types": "tsc --noEmit",
+    {%- if use_audit  %}
+    "audit": "better-npm-audit audit",
+    {%- endif %}
+    {%- if use_prettier  %}
+    "format": "prettier --write .",
+    {%- endif %}
+    {%- if use_vitest  %}
+    "test": "vitest run --coverage",
+    "test:watch": "vitest watch"
+    {%- endif %}
+  },
+  "engines": {
+    "node": ">=20.0",
+    "npm": ">=9.0"
+  },
+  "dependencies": {
+    "@algorandfoundation/algorand-typescript": "^1.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@algorandfoundation/algokit-client-generator": "^4.0.6",
+    "@algorandfoundation/algokit-utils": "^8.0.3",
+    "@algorandfoundation/algokit-utils-debug": "^1.0.2",
+    "@algorandfoundation/puya-ts": "^1.0.0-beta.6",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@tsconfig/node20": "^20.1.4",
+    "algosdk": "^3.0.0",
+    {%- if use_audit  %}
+    "better-npm-audit": "^3.11.0",
+    {%- endif %}
+    "dotenv": "^16.4.7",
+    {%- if use_prettier  %}
+    "prettier": "^3.4.2",
+    {%- endif %}
+    "ts-node-dev": "^2.0.0",
+    {%- if use_vitest  %}
+    "@algorandfoundation/algorand-typescript-testing": "^1.0.0-beta.1",
+    "vitest": "^2.1.8",
+    "@vitest/coverage-v8": "^2.1.8",
+    {%- endif %}
+    "typescript": "^5.7.3"
+  }
+}

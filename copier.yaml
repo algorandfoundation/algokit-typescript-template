@@ -44,14 +44,6 @@ preset_name:
     "Custom - for tailoring the template output to your needs": "custom"
   default: "starter"
 
-deployment_language:
-  type: str
-  help: What programming language do you want to use for your contract deployment code?
-  choices:
-    Python: "python"
-    TypeScript: "typescript"
-  default: "python"
-
 ide_vscode:
   type: bool
   help: Do you want to add VSCode configuration?
@@ -70,44 +62,28 @@ ide_jetbrains:
   when: "{{ preset_name == 'custom' }}"
   default: "{{ 'yes' if preset_name == 'production' else 'no' }}"
 
-use_python_pytest:
+use_vitest:
   type: bool
-  when: "{{ deployment_language == 'python' and preset_name == 'custom' }}"
-  help: Do you want to include unit tests (via pytest)?
-  default: "{{ 'yes' if preset_name == 'production' and deployment_language == 'python' else 'no' }}"
-
-use_typescript_jest:
-  type: bool
-  when: "{{ deployment_language == 'typescript' and preset_name == 'custom' }}"
-  help: Do you want to include unit tests (via jest)?
-  default: "{{ 'yes' if preset_name == 'production' and deployment_language == 'typescript' else 'no' }}"
-
-python_linter:
-  type: str
-  help: Do you want to use a Python linter?
   when: "{{ preset_name == 'custom' }}"
-  choices:
-    Ruff: "ruff"
-    Flake8: "flake8"
-    No thanks: "none"
-  default: "{{ 'ruff' if preset_name == 'production' else 'none' }}"
+  help: Do you want to include unit tests (via vitest)?
+  default: "{{ 'yes' if preset_name == 'production' else 'no' }}"
 
-use_python_black:
+use_linter:
   type: bool
-  help: Do you want to use a Python formatter (via Black)?
+  help: Do you want to use a linter (via ESLint)?
   when: "{{ preset_name == 'custom' }}"
   default: "{{ 'yes' if preset_name == 'production' else 'no' }}"
 
-use_python_mypy:
+use_prettier:
   type: bool
+  help: Do you want to use a formatter (via Prettier)?
   when: "{{ preset_name == 'custom' }}"
-  help: Do you want to use a Python type checker (via mypy)?
   default: "{{ 'yes' if preset_name == 'production' else 'no' }}"
 
-use_python_pip_audit:
+use_audit:
   type: bool
   when: "{{ preset_name == 'custom' }}"
-  help: Do you want to include Python dependency vulnerability scanning (via pip-audit)?
+  help: Do you want to include dependency vulnerability scanning (via better-npm-audit)?
   default: "{{ 'yes' if preset_name == 'production' else 'no' }}"
 
 use_github_actions:

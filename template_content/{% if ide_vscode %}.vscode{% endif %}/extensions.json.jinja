@@ -1,21 +1,14 @@
 {
   "recommendations": [
-    "ms-python.python",
-    {% if python_linter == 'ruff' -%}
-    "charliermarsh.ruff",
-    {% elif python_linter == 'flake8' -%}
-    "ms-python.flake8",
+    {% if use_linter -%}
+    "dbaeumer.vscode-eslint",
     {% endif -%}
-    {% if use_python_mypy -%}
-    "matangover.mypy",
-    {% endif -%}
-    {% if use_python_black -%}
-    "ms-python.black-formatter",
-    {% endif -%}
-    {% if deployment_language == 'typescript' -%}
+    {% if use_prettier -%}
     "esbenp.prettier-vscode",
     {% endif -%}
-    "tamasfe.even-better-toml",
+    {% if use_vitest -%}
+    "vitest.explorer",
+    {% endif -%}
     "editorconfig.editorconfig",
     "vsls-contrib.codetour",
     "algorandfoundation.algokit-avm-vscode-debugger"

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "vsls-contrib.codetour",
+    "vitest.explorer",
+    "dbaeumer.vscode-eslint",
+    "algorandfoundation.algokit-avm-vscode-debugger"
+  ]
+}

@@ -14,8 +14,11 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
-      - name: Install poetry
-        run: pipx install poetry
+      - name: Use Node.js lts
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts
+          cache: 'npm'
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -25,6 +28,9 @@ jobs:
 
       - name: Install algokit
         run: pipx install algokit
+
+      - name: Install puya compiler
+        run: pipx install puya
 
       - name: Start LocalNet
         run: algokit localnet start
@@ -38,17 +44,23 @@ jobs:
           # set git user and email as test invoke git
           git config --global user.email "actions@github.com" && git config --global user.name "github-actions"
 
-      - name: Audit python dependencies
+{% if use_audit %}
+      - name: Audit dependencies
         run: algokit project run audit {% if use_workspace %}--project-name '{{ project_name }}'{% endif %}
+{% endif %}
 
-      - name: Lint and format python dependencies
+{% if use_linter %}
+      - name: Lint and format
         run: algokit project run lint {% if use_workspace %}--project-name '{{ project_name }}'{% endif %}
+{% endif %}
 
+{% if use_vitest %}
       - name: Run tests
         shell: bash
         run: |
           set -o pipefail
           algokit project run test {% if use_workspace %}--project-name '{{ project_name }}'{% endif %}
+{% endif %}
 
       - name: Build smart contracts
         run: algokit project run build {% if use_workspace %}--project-name '{{ project_name }}'{% endif %}

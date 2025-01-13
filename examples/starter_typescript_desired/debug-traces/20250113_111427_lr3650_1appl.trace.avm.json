@@ -1,0 +1,310 @@
+{
+  "last-round": 3650,
+  "txn-groups": [
+    {
+      "txn-results": [
+        {
+          "txn-result": {
+            "txn": {
+              "txn": {
+                "type": "appl",
+                "snd": "ICVTTWVDKV2FTBH7PDDGPXBQKHZMUAE26CYOX5MH5H6ZSZHAY3ASG4VL4A",
+                "lv": 4650,
+                "gen": "dockernet-v1",
+                "gh": "S5soihBjmKDkdk5Abh0oIFZsDhx4qN2Gs0p03i9pdes=",
+                "fee": 1000,
+                "fv": 3650,
+                "apid": 5214,
+                "apaa": [
+                  "Ar7OEQ==",
+                  "AAV3b3JsZA=="
+                ]
+              }
+            },
+            "logs": [
+              "FR98dQALSGVsbG8gd29ybGQ="
+            ]
+          },
+          "app-budget-consumed": 30,
+          "exec-trace": {
+            "approval-program-hash": "0yY983w6C1t4ExFeUARpuqywpMkOl/kgoacuUf8k8/M=",
+            "approval-program-trace": [
+              {
+                "pc": 1,
+                "stack-additions": [
+                  {
+                    "type": 2,
+                    "uint": 2
+                  }
+                ]
+              },
+              {
+                "pc": 3,
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 6,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "Ar7OEQ=="
+                  }
+                ]
+              },
+              {
+                "pc": 12,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "Ar7OEQ=="
+                  }
+                ]
+              },
+              {
+                "pc": 15,
+                "stack-pop-count": 2
+              },
+              {
+                "pc": 22,
+                "stack-additions": [
+                  {
+                    "type": 2
+                  }
+                ]
+              },
+              {
+                "pc": 24,
+                "stack-additions": [
+                  {
+                    "type": 2,
+                    "uint": 1
+                  }
+                ],
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 25,
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 26,
+                "stack-additions": [
+                  {
+                    "type": 2,
+                    "uint": 5214
+                  }
+                ]
+              },
+              {
+                "pc": 28,
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 29,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "AAV3b3JsZA=="
+                  }
+                ]
+              },
+              {
+                "pc": 32,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "d29ybGQ="
+                  }
+                ],
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 35
+              },
+              {
+                "pc": 70
+              },
+              {
+                "pc": 73,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "SGVsbG8g"
+                  }
+                ]
+              },
+              {
+                "pc": 81,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "d29ybGQ="
+                  }
+                ]
+              },
+              {
+                "pc": 83,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "SGVsbG8gd29ybGQ="
+                  }
+                ],
+                "stack-pop-count": 2
+              },
+              {
+                "pc": 84,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "SGVsbG8gd29ybGQ="
+                  }
+                ],
+                "stack-pop-count": 2
+              },
+              {
+                "pc": 38,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "SGVsbG8gd29ybGQ="
+                  },
+                  {
+                    "type": 1,
+                    "bytes": "SGVsbG8gd29ybGQ="
+                  }
+                ],
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 39,
+                "stack-additions": [
+                  {
+                    "type": 2,
+                    "uint": 11
+                  }
+                ],
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 40,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "AAAAAAAAAAs="
+                  }
+                ],
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 41,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "AAs="
+                  }
+                ],
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 44,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "AAs="
+                  },
+                  {
+                    "type": 1,
+                    "bytes": "SGVsbG8gd29ybGQ="
+                  }
+                ],
+                "stack-pop-count": 2
+              },
+              {
+                "pc": 45,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "AAtIZWxsbyB3b3JsZA=="
+                  }
+                ],
+                "stack-pop-count": 2
+              },
+              {
+                "pc": 46,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "FR98dQ=="
+                  }
+                ]
+              },
+              {
+                "pc": 52,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "FR98dQ=="
+                  },
+                  {
+                    "type": 1,
+                    "bytes": "AAtIZWxsbyB3b3JsZA=="
+                  }
+                ],
+                "stack-pop-count": 2
+              },
+              {
+                "pc": 53,
+                "stack-additions": [
+                  {
+                    "type": 1,
+                    "bytes": "FR98dQALSGVsbG8gd29ybGQ="
+                  }
+                ],
+                "stack-pop-count": 2
+              },
+              {
+                "pc": 54,
+                "stack-pop-count": 1
+              },
+              {
+                "pc": 55,
+                "stack-additions": [
+                  {
+                    "type": 2,
+                    "uint": 1
+                  }
+                ]
+              },
+              {
+                "pc": 57,
+                "stack-additions": [
+                  {
+                    "type": 2,
+                    "uint": 1
+                  }
+                ],
+                "stack-pop-count": 1
+              }
+            ]
+          }
+        }
+      ],
+      "app-budget-added": 700,
+      "app-budget-consumed": 30
+    }
+  ],
+  "version": 2,
+  "eval-overrides": {
+    "allow-empty-signatures": true,
+    "fix-signers": true,
+    "max-log-calls": 2048,
+    "max-log-size": 65536
+  },
+  "exec-trace-config": {
+    "enable": true,
+    "scratch-change": true,
+    "stack-change": true,
+    "state-change": true
+  }
+}

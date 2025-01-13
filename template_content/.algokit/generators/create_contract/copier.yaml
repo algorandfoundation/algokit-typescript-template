@@ -7,4 +7,9 @@ contract_name:
   placeholder: "my-new-contract"
   default: "my-new-contract"
 
+include_tests:
+  type: bool
+  help: Should we include testing files?
+  default: True
+
 _templates_suffix: ".j2"
