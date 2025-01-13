@@ -93,7 +93,7 @@ def run_init(
         "--no-ide",
         "--no-git",
         "--no-workspace",
-        "--no-bootstrap"
+        "--no-bootstrap",
     ]
     answers = {**DEFAULT_PARAMETERS, **(answers or {})}
 
