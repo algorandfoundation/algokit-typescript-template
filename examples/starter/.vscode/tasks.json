@@ -3,11 +3,9 @@
   "tasks": [
     {
       "label": "Build contracts",
-      "command": "${workspaceFolder}/.venv/bin/python",
-      "windows": {
-        "command": "${workspaceFolder}/.venv/Scripts/python.exe"
-      },
-      "args": ["-m", "smart_contracts", "build"],
+      "type": "npm",
+      "script": "build",
+      "path": "${workspaceFolder}",
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -19,11 +17,9 @@
     },
     {
       "label": "Build contracts (+ LocalNet)",
-      "command": "${workspaceFolder}/.venv/bin/python",
-      "windows": {
-        "command": "${workspaceFolder}/.venv/Scripts/python.exe"
-      },
-      "args": ["-m", "smart_contracts", "build"],
+      "type": "npm",
+      "script": "build",
+      "path": "${workspaceFolder}",
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -63,13 +59,7 @@
     {
       "label": "Analyze TEAL contracts with AlgoKit Tealer integration",
       "command": "algokit",
-      "args": [
-        "task",
-        "analyze",
-        "${workspaceFolder}/.algokit",
-        "--recursive",
-        "--force"
-      ],
+      "args": ["task", "analyze", "${workspaceFolder}/.algokit", "--recursive", "--force"],
       "options": {
         "cwd": "${workspaceFolder}"
       },

@@ -2,9 +2,9 @@ import { Config } from '@algorandfoundation/algokit-utils'
 import { algorandFixture } from '@algorandfoundation/algokit-utils/testing'
 import { Address } from 'algosdk'
 import { beforeAll, beforeEach, describe, expect, test } from 'vitest'
-import { {{ contract_name.split('_')|map('capitalize')|join }}Factory } from '../artifacts/{{ contract_name }}/{{ contract_name.split('_')|map('capitalize')|join }}Client'
+import { HelloWorldFactory } from '../artifacts/hello_world/HelloWorldClient'
 
-describe('{{ contract_name.split('_')|map('capitalize')|join }} contract', () => {
+describe('HelloWorld contract', () => {
   const localnet = algorandFixture()
   beforeAll(() => {
     Config.configure({
@@ -15,7 +15,7 @@ describe('{{ contract_name.split('_')|map('capitalize')|join }} contract', () =>
   beforeEach(localnet.beforeEach)
 
   const deploy = async (account: Address) => {
-    const factory = localnet.algorand.client.getTypedAppFactory({{ contract_name.split('_')|map('capitalize')|join }}Factory, {
+    const factory = localnet.algorand.client.getTypedAppFactory(HelloWorldFactory, {
       defaultSender: account,
     })
 

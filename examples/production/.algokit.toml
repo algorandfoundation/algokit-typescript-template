@@ -11,11 +11,11 @@ path = ".algokit/generators/create_env_file"
 
 [project]
 type = 'contract'
-name = 'production_python'
+name = 'production'
 artifacts = 'smart_contracts/artifacts'
 
 [project.deploy]
-command = "poetry run python -m smart_contracts deploy"
+command = "npm run deploy:ci"
 environment_secrets = [
   "DEPLOYER_MNEMONIC",
   "DISPENSER_MNEMONIC",
@@ -25,20 +25,19 @@ environment_secrets = [
 environment_secrets = []
 
 [project.run]
-# Commands intented for use locally and in CI
+# Commands intended for use locally and in CI
 build = { commands = [
-  'poetry run python -m smart_contracts build',
+  'npm run build',
 ], description = 'Build all smart contracts in the project' }
 test = { commands = [
-  'poetry run pytest',
-], description = 'Run smart contract tests' }
+  'npm run test',
+], description = 'Run smart contract tests using vitest' }
 audit = { commands = [
-  'poetry run pip-audit',
-], description = 'Audit with pip-audit' }
+  'npm run audit',
+], description = 'Audit with better-npm-audit' }
 lint = { commands = [
-  'poetry run black --check --diff .',
-  'poetry run ruff check .',
-  'poetry run mypy',
+  'npm run lint',
+  'npm run format',
 ], description = 'Perform linting' }
 audit-teal = { commands = [
   # 🚨 IMPORTANT 🚨: For strict TEAL validation, remove --exclude statements. The default starter contract is not for production. Ensure thorough testing and adherence to best practices in smart contract development. This is not a replacement for a professional audit.

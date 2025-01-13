@@ -130,6 +130,7 @@ For pull requests and pushes to `main` branch against this repository the follow
 {%- endif %}
 {%- if use_linter %}
  - Linting is checked using [ESLint](https://eslint.org/)
+{%- endif %}
 {%- if use_vitest %}
 - The base framework for testing is [vitest](https://vitest.dev/), and the project includes two separate kinds of tests:
 - - `Algorand TypeScript` smart contract unit tests, that are run using [`algorand-typescript-testing`](https://github.com/algorandfoundation/algorand-typescript-testing), which are executed in a Node.js intepreter emulating major AVM behaviour

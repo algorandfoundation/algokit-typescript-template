@@ -22,6 +22,7 @@ config_path = Path(__file__).parent.parent / "pyproject.toml"
 BUILD_ARGS = ["algokit", "project", "run", "build"]
 TEST_ARGS = ["algokit", "project", "run", "test"]
 LINT_ARGS = ["algokit", "project", "run", "lint"]
+BOOTSTRAP_ARGS = ["algokit", "project", "bootstrap", "all"]
 
 
 def _load_copier_yaml(path: Path) -> dict[str, str | bool | dict]:
@@ -92,6 +93,7 @@ def run_init(
         "--no-ide",
         "--no-git",
         "--no-workspace",
+        "--no-bootstrap"
     ]
     answers = {**DEFAULT_PARAMETERS, **(answers or {})}
 
@@ -112,6 +114,7 @@ def run_init(
 
     if result.returncode:
         return result
+
     # if successful, normalize .copier-answers.yml to make observing diffs easier
     copier_answers = Path(copy_to / ".algokit" / ".copier-answers.yml")
     content = copier_answers.read_text("utf-8")
@@ -119,7 +122,7 @@ def run_init(
     content = src_path_pattern.sub("_src_path: <src>", content)
     copier_answers.write_text(content, "utf-8")
 
-    check_args = [BUILD_ARGS]
+    check_args = [BOOTSTRAP_ARGS, BUILD_ARGS]
 
     processed_questions = _load_copier_yaml(copier_answers)
     if processed_questions["preset_name"] == "production":

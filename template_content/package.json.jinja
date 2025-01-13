@@ -7,11 +7,10 @@
     "build": "puya-ts build smart_contracts --output-source-map --out-dir artifacts && algokit generate client smart_contracts/artifacts --output {app_spec_dir}/{contract_name}Client.ts",
     "deploy": "ts-node-dev --transpile-only --watch .env -r dotenv/config smart_contracts/index.ts",
     "deploy:ci": "ts-node --transpile-only -r dotenv/config smart_contracts/index.ts",
-    {%- if use_eslint  %}
-    "lint": "eslint ./src/ --ext .ts",
-    "lint:fix": "eslint ./src/ --ext .ts --fix",
+    {%- if use_linter  %}
+    "lint": "eslint smart_contracts",
+    "lint:fix": "eslint smart_contracts --fix",
     {%- endif %}
-    "check-types": "tsc --noEmit",
     {%- if use_audit  %}
     "audit": "better-npm-audit audit",
     {%- endif %}
@@ -20,8 +19,9 @@
     {%- endif %}
     {%- if use_vitest  %}
     "test": "vitest run --coverage",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
     {%- endif %}
+    "check-types": "tsc --noEmit"
   },
   "engines": {
     "node": ">=20.0",
@@ -42,6 +42,11 @@
     "better-npm-audit": "^3.11.0",
     {%- endif %}
     "dotenv": "^16.4.7",
+    {%- if use_linter  %}
+    "eslint": "^9.18.0",
+    "@eslint/js": "^9.18.0",
+    "typescript-eslint": "^8.19.1",
+    {%- endif %}
     {%- if use_prettier  %}
     "prettier": "^3.4.2",
     {%- endif %}
