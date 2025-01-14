@@ -1,26 +1,26 @@
 {
   "files.eol": "\n",
-  {% if use_prettier %}
+  {% if use_prettier -%}
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
-  {% endif %}
-  {% if use_vitest %}
+  {% endif -%}
+  {% if use_vitest -%}
   "jest.enable": false,
-  {% endif %}
-  {% if use_github_actions %}
+  {% endif -%}
+  {% if use_github_actions -%}
   "files.associations": {
     ".github/**/*.yml": "github-actions-workflow"
   },
-  {% endif %}
-  {% if use_linter %}
+  {% endif -%}
+  {% if use_linter -%}
   "eslint.enable": true,
   "eslint.validate": ["typescript"],
   "eslint.options": {
     "extensions": [".ts"]
   },
   "eslint.workingDirectories": ["./smart_contracts"]
-  {% endif %}
+  {% endif -%}
 }

@@ -23,11 +23,17 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
-      - name: Use Node.js lts
-        uses: actions/setup-node@v3
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
         with:
-          node-version: lts
+          node-version: '22.x'
           cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Install algokit
         run: pipx install algokit
