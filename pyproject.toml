@@ -18,7 +18,7 @@ flake8 = "^6.0.0"
 pytest = "^8.3.2"
 mypy = "^1.1.1"
 pre-commit = "^3.2.1"
-types-pyyaml = "^6.0.12.9"
+types-pyyaml = "^6.0.12.20241230"
 pytest-xdist = "^3.3.1"
 puyapy = "^4.1.1"
 
