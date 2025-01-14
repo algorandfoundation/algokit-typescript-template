@@ -11,7 +11,7 @@
 
 ---
 
-This template provides a production-ready baseline for developing and deploying [Algorand TypeScript](https://github.com/algorandfoundation/puya-ts) smart contracts.
+This template provides a beta template for developing and deploying [Algorand TypeScript](https://github.com/algorandfoundation/puya-ts) smart contracts.
 
 ~~To use it [install AlgoKit](https://github.com/algorandfoundation/algokit-cli#readme) and then either pass in `-t typescript` to `algokit init` or select the `typescript` template.~~
 
