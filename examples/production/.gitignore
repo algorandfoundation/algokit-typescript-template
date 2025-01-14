@@ -58,6 +58,5 @@ coverage
 
 # AlgoKit
 debug_traces/
-debug-traces/
 .algokit/static-analysis/ # Replace with .algokit/static-analysis/tealer/ to enable snapshot checks in CI
 .algokit/sources
