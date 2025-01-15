@@ -1,4 +1,5 @@
 import { Config } from '@algorandfoundation/algokit-utils'
+import { registerDebugEventHandlers } from '@algorandfoundation/algokit-utils-debug'
 import { algorandFixture } from '@algorandfoundation/algokit-utils/testing'
 import { Address } from 'algosdk'
 import { beforeAll, beforeEach, describe, expect, test } from 'vitest'
@@ -11,6 +12,7 @@ describe('HelloWorld contract', () => {
       debug: true,
       // traceAll: true,
     })
+    registerDebugEventHandlers()
   })
   beforeEach(localnet.beforeEach)
 

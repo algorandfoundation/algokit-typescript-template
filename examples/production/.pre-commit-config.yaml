@@ -7,14 +7,12 @@ repos:
             name: Prettier
             entry: npm run format
             language: system
-
       - repo: local
         hooks:
           - id: vitest
             name: Vitest
             entry: npm run test
             language: system
-
       # # Uncomment to enable TEAL static analysis using Tealer package
       # - id: tealer
       #   name: tealer

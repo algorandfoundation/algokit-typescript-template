@@ -1,30 +1,30 @@
 repos:
   - repo: local
     hooks:
-      {% if use_prettier %}
+      {% if use_prettier -%}
       - repo: local
         hooks:
           - id: prettier
             name: Prettier
             entry: npm run format
             language: system
-      {% endif %}
-      {% if use_linter == 'ruff' %}
+      {% endif -%}
+      {% if use_linter == 'ruff' -%}
       - repo: local
         hooks:
           - id: eslint
             name: ESLint
             entry: npm run lint
             language: system
-      {% endif %}
-      {% if use_vitest %}
+      {% endif -%}
+      {% if use_vitest -%}
       - repo: local
         hooks:
           - id: vitest
             name: Vitest
             entry: npm run test
             language: system
-      {% endif %}
+      {% endif -%}
       # # Uncomment to enable TEAL static analysis using Tealer package
       # - id: tealer
       #   name: tealer
