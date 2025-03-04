@@ -6,7 +6,7 @@ This project has been generated using AlgoKit. See below for default getting sta
 
 ### Pre-requisites
 
-- [Nodejs 20](https://nodejs.org/en/download) or later
+- [Nodejs 22](https://nodejs.org/en/download) or later
 - [AlgoKit CLI 2.5](https://github.com/algorandfoundation/algokit-cli?tab=readme-ov-file#install) or later
 - [Docker](https://www.docker.com/) (only required for LocalNet)
 - [Puya Compiler 4.4.2](https://pypi.org/project/puyapy/) or later
