@@ -9,6 +9,6 @@ describe('HelloWorld contract', () => {
 
     const result = contract.hello('Sally')
 
-    expect(result).toBe('Hello Sally')
+    expect(result).toBe('Hello, Sally')
   })
 })
