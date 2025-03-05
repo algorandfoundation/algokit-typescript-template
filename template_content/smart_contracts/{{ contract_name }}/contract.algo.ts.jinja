@@ -1,7 +1,7 @@
 import { Contract } from '@algorandfoundation/algorand-typescript'
 
 export class {{ contract_name.split('_')|map('capitalize')|join }} extends Contract {
-  public hello(name: string): string {
+  hello(name: string): string {
     return `Hello, ${name}`
   }
 }
