@@ -8,4 +8,7 @@ export default tseslint.config(eslint.configs.recommended, tseslint.configs.reco
       ...globals.node,
     },
   },
+  rules: {
+    '@typescript-eslint/explicit-member-accessibility': 'warn',
+  },
 })

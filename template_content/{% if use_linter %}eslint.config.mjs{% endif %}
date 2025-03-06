@@ -11,5 +11,8 @@ export default tseslint.config(
         ...globals.node,
       },
     },
+    rules: {
+      '@typescript-eslint/explicit-member-accessibility': 'warn',
+    },
   },
 );
