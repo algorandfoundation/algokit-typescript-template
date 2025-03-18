@@ -13,12 +13,7 @@
 
 This template provides a beta template for developing and deploying [Algorand TypeScript](https://github.com/algorandfoundation/puya-ts) smart contracts.
 
-~~To use it [install AlgoKit](https://github.com/algorandfoundation/algokit-cli#readme) and then either pass in `-t typescript` to `algokit init` or select the `typescript` template.~~
-
-To use it run:
-```
-algokit init --template-url https://github.com/algorandfoundation/algokit-typescript-template --UNSAFE-SECURITY-accept-template-url
-```
+To use it [install AlgoKit](https://github.com/algorandfoundation/algokit-cli#readme) and then either pass in `-t typescript` to `algokit init` or select the `typescript` template.
 
 This is one of the official templates used by AlgoKit to initialize an Algorand smart contract project. It's a [Copier template](https://copier.readthedocs.io/en/stable/).
 
