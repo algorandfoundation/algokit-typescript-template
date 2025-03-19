@@ -22,7 +22,7 @@ config_path = Path(__file__).parent.parent / "pyproject.toml"
 BUILD_ARGS = ["algokit", "project", "run", "build"]
 TEST_ARGS = ["algokit", "project", "run", "test"]
 LINT_ARGS = ["algokit", "project", "run", "lint"]
-BOOTSTRAP_ARGS = ["algokit", "project", "bootstrap", "all"]
+BOOTSTRAP_ARGS = ["algokit", "project", "bootstrap", "all", "--no-ci"]
 
 
 def _load_copier_yaml(path: Path) -> dict[str, str | bool | dict]:
