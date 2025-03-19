@@ -19,7 +19,6 @@ mypy = "^1.15.0"
 pre-commit = "^4.0.1"
 types-pyyaml = "^6.0.12.9"
 pytest-xdist = "^3.3.1"
-puyapy = "^4.4.4"
 
 [build-system]
 requires = ["poetry-core"]
