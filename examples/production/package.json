@@ -26,7 +26,7 @@
     "@algorandfoundation/algokit-client-generator": "^4.0.9",
     "@algorandfoundation/algokit-utils": "^8.2.2",
     "@algorandfoundation/algokit-utils-debug": "^1.0.3",
-    "@algorandfoundation/puya-ts": "^1.0.0-beta.47",
+    "@algorandfoundation/puya-ts": "^1.0.0-beta.50",
     "@rollup/plugin-typescript": "^12.1.2",
     "@tsconfig/node22": "^22.0.0",
     "algosdk": "^3.0.0",
@@ -37,7 +37,7 @@
     "typescript-eslint": "^8.19.1",
     "prettier": "^3.4.2",
     "ts-node-dev": "^2.0.0",
-    "@algorandfoundation/algorand-typescript-testing": "^1.0.0-beta.29",
+    "@algorandfoundation/algorand-typescript-testing": "^1.0.0-beta.30",
     "vitest": "^2.1.8",
     "@vitest/coverage-v8": "^2.1.8",
     "typescript": "^5.7.3"
