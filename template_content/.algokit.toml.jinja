@@ -16,6 +16,8 @@ artifacts = 'smart_contracts/artifacts'
 
 [project.deploy]
 command = "npm run deploy:ci"
+
+[project.deploy.testnet]
 environment_secrets = [
   "DEPLOYER_MNEMONIC",
 {%- if use_dispenser %}
@@ -23,8 +25,13 @@ environment_secrets = [
 {%- endif %}
 ]
 
-[project.deploy.localnet]
-environment_secrets = []
+[project.deploy.mainnet]
+environment_secrets = [
+  "DEPLOYER_MNEMONIC",
+{%- if use_dispenser %}
+  "DISPENSER_MNEMONIC",
+{%- endif %}
+]
 
 [project.run]
 # Commands intended for use locally and in CI
