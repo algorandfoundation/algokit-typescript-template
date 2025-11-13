@@ -1,6 +1,6 @@
 # AlgoKit Official Template for contributors
 
-This repository is a template for creating new AlgoKit projects. It includes a basic structure for creating a Algorand Python based smart contract project.
+This repository is a template for creating new AlgoKit projects. It includes a basic structure for creating a Algorand TypeScript based smart contract project.
 
 ## Pre-requisites
 

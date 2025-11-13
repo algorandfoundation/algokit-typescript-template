@@ -16,7 +16,10 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "lib": [
+      "ESNext"
+    ],
   },
   "include": ["smart_contracts/**/*.ts"],
   "exclude": ["node_modules", "dist", "coverage"]
