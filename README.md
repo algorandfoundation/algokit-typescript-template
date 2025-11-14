@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/algorandfoundation/algokit-typescript-template"><img src="https://bafybeid5333wj4vvxc3yyif3dzrewowos46sq2vj55r7u3vyhazhoyffo4.ipfs.nftstorage.link/" width=60%></a>
+<a href="https://github.com/algorandfoundation/algokit-typescript-template"><img src="./docs/images/banner.png" width=60%></a>
 </div>
 
 <p align="center">
