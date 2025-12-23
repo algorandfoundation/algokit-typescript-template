@@ -17,13 +17,12 @@
     "@algorandfoundation/algorand-typescript": "^1.0.1"
   },
   "devDependencies": {
-    "@algorandfoundation/algokit-client-generator": "^6.0.0",
-    "@algorandfoundation/algokit-utils": "^9.0.0",
-    "@algorandfoundation/algokit-utils-debug": "^1.0.4",
+    "@algorandfoundation/algokit-client-generator": "^7.0.0-alpha.2",
+    "@algorandfoundation/algokit-utils": "^10.0.0-alpha.20",
+    "@algorandfoundation/algokit-utils-debug": "^2.0.0-alpha.1",
     "@algorandfoundation/puya-ts": "^1.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "@tsconfig/node22": "^22.0.0",
-    "algosdk": "^3.0.0",
     "dotenv": "^16.4.7",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.3"
