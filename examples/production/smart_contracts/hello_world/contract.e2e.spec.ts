@@ -1,7 +1,6 @@
-import { Config } from '@algorandfoundation/algokit-utils'
+import { Config, Address } from '@algorandfoundation/algokit-utils'
 import { registerDebugEventHandlers } from '@algorandfoundation/algokit-utils-debug'
 import { algorandFixture } from '@algorandfoundation/algokit-utils/testing'
-import { Address } from 'algosdk'
 import { beforeAll, beforeEach, describe, expect, test } from 'vitest'
 import { HelloWorldFactory } from '../artifacts/hello_world/HelloWorldClient'
 
