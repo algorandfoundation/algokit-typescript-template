@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@algorandfoundation/algokit-client-generator": "^7.0.0-alpha.5",
-    "@algorandfoundation/algokit-utils": "^10.0.0-alpha.27",
+    "@algorandfoundation/algokit-utils": "^10.0.0-alpha.32",
     "@algorandfoundation/algokit-utils-debug": "^2.0.0-alpha.2",
     "@algorandfoundation/puya-ts": "^1.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
