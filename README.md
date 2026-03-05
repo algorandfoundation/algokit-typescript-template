@@ -25,7 +25,7 @@ This template supports the following features:
 - Deploy-time immutability and permanence control
 - [NPM](https://www.npmjs.com/) for TypeScript packaging and dependency management
 - [TypeScript](https://www.typescriptlang.org/) for strongly typed programming language that builds on JavaScript
-- [ts-node-dev](https://github.com/wclr/ts-node-dev) for TypeScript deployment script execution
+- [tsx](https://github.com/wclr/tsx) for TypeScript deployment script execution
 - [Prettier](https://prettier.io/) for code formatting
 - [ESLint](https://eslint.org/) for linting
 - [vitest](https://vitest.dev/) for automated testing (unit test and end-to-end)

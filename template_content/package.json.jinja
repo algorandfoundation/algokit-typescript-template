@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Smart contract deployer",
   "main": "smart_contracts/index.ts",
+  "type": "module",
   "scripts": {
     "build": "algokit compile ts smart_contracts --output-source-map --out-dir artifacts && algokit generate client smart_contracts/artifacts --output {app_spec_dir}/{contract_name}Client.ts",
-    "deploy": "ts-node-dev --transpile-only --watch .env -r dotenv/config smart_contracts/index.ts",
-    "deploy:ci": "ts-node --transpile-only -r dotenv/config smart_contracts/index.ts",
+    "deploy": "tsx watch -r dotenv/config smart_contracts/index.ts",
+    "deploy:ci": "tsx -r dotenv/config smart_contracts/index.ts",
     {%- if use_linter  %}
     "lint": "eslint smart_contracts",
     "lint:fix": "eslint smart_contracts --fix",
@@ -50,7 +51,7 @@
     {%- if use_prettier  %}
     "prettier": "^3.4.2",
     {%- endif %}
-    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.19.3",
     {%- if use_vitest  %}
     "@algorandfoundation/algorand-typescript-testing": "^1.0.1",
     "vitest": "^2.1.8",
