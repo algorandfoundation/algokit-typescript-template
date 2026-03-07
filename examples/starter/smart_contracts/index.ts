@@ -3,6 +3,7 @@ import { registerDebugEventHandlers } from '@algorandfoundation/algokit-utils-de
 import { consoleLogger } from '@algorandfoundation/algokit-utils/logging'
 import * as fs from 'node:fs'
 import * as path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 // Uncomment the traceAll option to enable auto generation of AVM Debugger compliant sourceMap and simulation trace file for all AVM calls.
 // Learn more about using AlgoKit AVM Debugger to debug your TEAL source codes and inspect various kinds of Algorand transactions in atomic groups -> https://github.com/algorandfoundation/algokit-avm-vscode-Debugger
@@ -15,7 +16,7 @@ Config.configure({
 registerDebugEventHandlers()
 
 // base directory
-const baseDir = path.resolve(__dirname)
+const baseDir = path.dirname(fileURLToPath(import.meta.url))
 
 // function to validate and dynamically import a module
 async function importDeployerIfExists(dir: string) {
@@ -42,9 +43,9 @@ async function getDeployers() {
 (async () => {
   const contractName = process.argv.length > 2 ? process.argv[2] : undefined
   const contractDeployers = await getDeployers()
-  
+
   const filteredDeployers = contractName
-    ? contractDeployers.filter(deployer => deployer.name === contractName)
+    ? contractDeployers.filter((deployer) => deployer.name === contractName)
     : contractDeployers
 
   if (contractName && filteredDeployers.length === 0) {
