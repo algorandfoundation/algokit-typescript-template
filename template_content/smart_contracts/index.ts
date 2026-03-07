@@ -42,9 +42,9 @@ async function getDeployers() {
 (async () => {
   const contractName = process.argv.length > 2 ? process.argv[2] : undefined
   const contractDeployers = await getDeployers()
-  
+
   const filteredDeployers = contractName
-    ? contractDeployers.filter(deployer => deployer.name === contractName)
+    ? contractDeployers.filter((deployer) => deployer.name === contractName)
     : contractDeployers
 
   if (contractName && filteredDeployers.length === 0) {
