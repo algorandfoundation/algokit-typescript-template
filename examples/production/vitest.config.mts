@@ -1,10 +1,10 @@
-import { puyaTsTransformer } from '@algorandfoundation/algorand-typescript-testing/vitest-transformer'
-import typescript from '@rollup/plugin-typescript'
-import { defineConfig } from 'vitest/config'
+import { puyaTsTransformer } from '@algorandfoundation/algorand-typescript-testing/vitest-transformer';
+import typescript from '@rollup/plugin-typescript';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   esbuild: {},
-  test: {    
+  test: {
     testTimeout: 10000,
     coverage: {
       provider: 'v8',
@@ -18,4 +18,4 @@ export default defineConfig({
       },
     }),
   ],
-})
+});
