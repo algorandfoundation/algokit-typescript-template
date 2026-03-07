@@ -24,7 +24,6 @@
     "@algorandfoundation/puya-ts": "^1.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "@tsconfig/node22": "^22.0.0",
-    "algosdk": "^3.0.0",
     "dotenv": "^16.4.7",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3"
