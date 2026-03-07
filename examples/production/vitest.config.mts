@@ -1,6 +1,6 @@
-import { puyaTsTransformer } from '@algorandfoundation/algorand-typescript-testing/vitest-transformer'
-import typescript from '@rollup/plugin-typescript'
-import { defineConfig } from 'vitest/config'
+import { puyaTsTransformer } from '@algorandfoundation/algorand-typescript-testing/vitest-transformer';
+import typescript from '@rollup/plugin-typescript';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   esbuild: {},
@@ -12,10 +12,10 @@ export default defineConfig({
   },
   plugins: [
     typescript({
-      tsconfig: './tsconfig.test.json',
+      tsconfig: './tsconfig.json',
       transformers: {
         before: [puyaTsTransformer],
       },
     }),
   ],
-})
+});

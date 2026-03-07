@@ -154,7 +154,7 @@ This project makes use of Algorand TypeScript to build Algorand smart contracts.
 - [AlgoKit Utils](https://github.com/algorandfoundation/algokit-utils-ts) - A set of core Algorand utilities that make it easier to build solutions on Algorand.
 - [NPM](https://www.npmjs.com/): TypeScript packaging and dependency management.
 - [TypeScript](https://www.typescriptlang.org/): Strongly typed programming language that builds on JavaScript
-- [ts-node-dev](https://github.com/wclr/ts-node-dev): TypeScript development execution environment- [Prettier](https://prettier.io/): A code formatter.- [ESLint](https://eslint.org/): A JavaScript / TypeScript linter.
+- [tsx](https://github.com/wclr/tsx): TypeScript development execution environment- [Prettier](https://prettier.io/): A code formatter.- [ESLint](https://eslint.org/): A JavaScript / TypeScript linter.
 - [vitest](https://vitest.dev/): Automated testing.
 - [better-npm-audit](https://github.com/jeemok/better-npm-audit#readme): Tool for scanning JavaScript / TypeScript environments for packages with known vulnerabilities.
 - [pre-commit](https://pre-commit.com/): A framework for managing and maintaining multi-language pre-commit hooks, to enable pre-commit you need to run `pre-commit install` in the root of the repository. This will install the pre-commit hooks and run them against modified files when committing. If any of the hooks fail, the commit will be aborted. To run the hooks on all files, use `pre-commit run --all-files`.
